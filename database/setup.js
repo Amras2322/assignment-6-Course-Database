@@ -6,7 +6,7 @@ console.log('Connected to SQLite database');
 
 // Create courses table
 db.run(`
-  CREATE TABLE courses (
+  CREATE TABLE IF NOT EXISTS courses (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     courseCode TEXT,
     title TEXT,
@@ -14,9 +14,13 @@ db.run(`
     description TEXT,
     semester TEXT
   )
-`);
-
-console.log('Courses table created');
+`, (err) => {
+  if (err) {
+    console.error('Error creating table:', err.message);
+  } else {
+    console.log('Courses table created');
+  }
+});
 
 // Close the database connection
 db.close((err) => {
