@@ -1,17 +1,22 @@
 {
-  "name": "assignment6",
+  "name": "assignment-6-course-database",
   "version": "1.0.0",
-  "description": "",
+  "description": "Course catalog API built with Express.js and a SQLite data tier (Rize Assignment #6).",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "setup": "node database/setup.js",
+    "seed": "node database/seed.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Keegan Ringnalda",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",
     "sqlite3": "^5.1.7"
+  },
+  "allowScripts": {
+    "sqlite3@5.1.7": true
   }
 }
